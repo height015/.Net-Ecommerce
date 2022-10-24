@@ -1,0 +1,151 @@
+
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isFeature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeatureStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeatureEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkAsNew)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkAsNewStartDateTimeUtc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkAsNewEndDateTimeUtc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoldCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowOnHomePage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategory.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isFeature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeatureStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeatureEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkAsNew)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkAsNewStartDateTimeUtc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkAsNewEndDateTimeUtc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowOnHomePage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
